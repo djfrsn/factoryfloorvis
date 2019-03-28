@@ -6,11 +6,40 @@ import partsList from '../../testMachines/partsList';
 // MachineStatus will return the status of what test are running on each machine by streaming results of running test
 // As well return a 'startTest' function that begines running machineOperations
 
+function displayTest(testOperations) {
+  const operationsComplete = testOperations.isEmpty();
+
+  if (operationsComplete) return null;
+
+  console.log(testOperations.dequeue());
+  displayTest(testOperations);
+}
+
 const FactoryMachines = ({ machines, orders }) => {
   const machinesOperations = queueOrders({ machines, orders, partsList });
+  // console.log(machines);
   // console.log(machinesOperations);
-  const runOperations = testOrders(machinesOperations);
-  return <div>Visual List of machines and current operation, etc</div>;
+  return (
+    <div className="factoryMachines">
+      <h1>Factory Machines</h1>
+      {machines.map(({ machine_id, name }) => {
+        return (
+          <div>
+            <div className="machineName">{name}</div>
+            <ul className="machineOperations">
+              {displayTest(machinesOperations[machine_id])}
+            </ul>
+          </div>
+        );
+      })}
+      <style jsx>{`
+        .FactoryMachines {
+          display: flex;
+          flex-direction: column;
+        }
+      `}</style>
+    </div>
+  );
 };
 
 export default FactoryMachines;
