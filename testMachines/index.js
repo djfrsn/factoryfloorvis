@@ -23,13 +23,3 @@ export function queueOrders({ machines, orders, partsList }) {
 
   return MachineQueues;
 }
-
-export function testOrders(orders) {
-  console.log('peek', orders[0].peek());
-  console.log('dequeue', orders[0].dequeue());
-  console.log('peek', orders[0].peek());
-
-  // will step through each item in each queue and update its status from 'untested' -> 'testing' -> 'test_complete'
-  // This will be done in random intervals between of 50-500ms to simulate test taking different amounts of times
-  // during each 'factory step'
-}
