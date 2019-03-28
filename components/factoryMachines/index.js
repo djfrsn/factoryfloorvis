@@ -1,4 +1,4 @@
-import { queueOrders } from '../../testMachines';
+import { queueOrders, testOrders } from '../../testMachines';
 import partsList from '../../testMachines/partsList';
 
 // The above code will create a queue for each machine and the test it needs to run
@@ -7,7 +7,9 @@ import partsList from '../../testMachines/partsList';
 // As well return a 'startTest' function that begines running machineOperations
 
 const FactoryMachines = ({ machines, orders }) => {
-  const machinesOperations = queueOrders(orders, partsList);
+  const machinesOperations = queueOrders({ machines, orders, partsList });
+  // console.log(machinesOperations);
+  const runOperations = testOrders(machinesOperations);
   return <div>Visual List of machines and current operation, etc</div>;
 };
 
