@@ -36,7 +36,7 @@ export class FactoryMachinesProvider extends React.Component {
   testOperation = operation => {
     const { machine_id } = operation;
     // we could add random stepTime between 50-500ms for some randomness
-    const stepTime = 5000 * Math.random();
+    const stepTime = 7500 * Math.random();
     // increment steps + 1 for each testOperation ran....can only run
     setTimeout(() => {
       this.setState(({ testedOperations }) => {

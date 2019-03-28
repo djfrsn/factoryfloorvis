@@ -26,7 +26,7 @@ const FactoryMachines = ({ machines, orders }) => {
     <FactoryMachinesConsumer>
       {factory_data => {
         const { machines, testOrders, state } = factory_data;
-
+        console.log(factory_data);
         return (
           <div className="factoryMachines">
             <h1>Factory Machines</h1>
