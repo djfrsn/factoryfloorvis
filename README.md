@@ -1,8 +1,9 @@
 
-### Factory floor visualization.
+### Factory floor visualization
+
 ## Specs
 
-We are creating a Factory Operating System for next-generation hardware companies, and you are creating one of its UIs. Create an application to help a factory test supervisor visualize their test process, given the following:
+Imagine a Factory Operating System for next-generation hardware companies, and you are creating one of its UIs. Create an application to help a factory test supervisor visualize their test process, given the following:
 
 - The factory has multiple test machines that test parts. See the list of machines below.
 - Each part has a list of tests that need to be completed before shipping out of the factory. See the list of parts and their tests below.
